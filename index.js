@@ -1,5 +1,9 @@
-var http = require('http')
-var server = http.createServer(function(request, response) {
-  console.log('Request!')
+var express = require('express')
+var port = 3000
+var app = express()
+app.get('/', function(req, res) {
+  res.json({status: 'Server is running!'})
 })
-server.listen(3000)
+app.listen(port, function() {
+  console.log(`Server is running at localhost:${port}`)
+})
